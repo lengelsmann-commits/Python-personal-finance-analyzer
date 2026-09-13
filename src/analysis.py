@@ -30,3 +30,15 @@ def spending_by_category(df):
         .abs()
         .sort_values(ascending=False)
     )
+
+def monthly_summary(df):
+    df = df.copy()
+    df["month"] = df["date"].dt.to_period("M")
+
+    monthly = df.groupby(["month", "type"])["amount"].sum().unstack(fill_value=0)
+
+    monthly["expenses"] = monthly.get("expense", 0).abs()
+    monthly["income"] = monthly.get("income", 0)
+    monthly["savings"] = monthly["income"] - monthly["expenses"]
+
+    return monthly[["income", "expenses", "savings"]]
