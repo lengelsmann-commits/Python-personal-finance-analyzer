@@ -39,3 +39,57 @@ The project analyses a fictional set of personal financial transactions and uses
 ### Fixed vs Variable Spending
 
 ![Fixed vs Variable Spending](output/fixed_vs_variable_spending.png)
+
+## Project Structure
+
+```text
+personal-finance-analyzer/
+
+data/
+    transactions.csv
+
+output/
+    monthly_income_expenses.png
+    spending_by_category.png
+    monthly_savings_rate.png
+    income_expenses_savings.png
+    spending_evolution.png
+    fixed_vs_variable_spending.png
+
+src/
+    analysis.py
+    data_loader.py
+    visualisation.py
+
+main.py
+requirements.txt
+README.md
+```
+
+## Technologies
+
+* Python
+* Pandas
+* Matplotlib
+
+## How to Run
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Then run:
+
+```bash
+python main.py
+```
+
+The visualisations will be generated in the `output/` folder.
+
+## Dataset
+
+The project uses a fictional transaction dataset created specifically for this project.
+
+No real personal financial information is used.
