@@ -41,3 +41,50 @@ def plot_spending_by_category(category_spending):
 
     plt.savefig("output/spending_by_category.png")
     plt.close()
+
+def plot_monthly_savings_rate(monthly):
+    savings_rate = (monthly["savings"] / monthly["income"]) * 100
+
+    fig, ax1 = plt.subplots(figsize=(10, 6))
+
+    ax1.bar(
+        monthly.index.astype(str),
+        monthly["savings"],
+        width=0.65,
+        alpha=0.7,
+        color="steelblue",
+        label="Savings (€)",
+    )
+
+    ax1.set_xlabel("Month")
+    ax1.set_ylabel("Savings (€)")
+    ax1.set_title("Monthly Savings and Savings Rate")
+
+    ax2 = ax1.twinx()
+
+    ax2.plot(
+        monthly.index.astype(str),
+        savings_rate,
+        marker="o",
+        linewidth=2.5,
+        color="orange",
+        label="Savings Rate (%)",
+    )
+
+    ax2.set_ylabel("Savings Rate (%)")
+    ax2.set_ylim(0, 100)
+
+    ax1.set_ylim(0, max(monthly["savings"]) * 1.2)
+
+    ax1.grid(axis="y", linestyle="--", alpha=0.4)
+
+    fig.legend(
+        loc="upper right",
+        bbox_to_anchor=(0.9, 0.9),
+    )
+
+    plt.xticks(rotation=45)
+    fig.tight_layout()
+
+    plt.savefig("output/monthly_savings_rate.png")
+    plt.close()
