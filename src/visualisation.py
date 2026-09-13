@@ -22,20 +22,24 @@ def plot_monthly_income_expenses(monthly):
     plt.close()
 
 def plot_spending_by_category(category_spending):
-    category_spending = category_spending.sort_values()
+    fig, ax = plt.subplots(figsize=(10, 8))
 
-    ax = category_spending.plot(
-        kind="barh",
-        figsize=(8, 5),
+    wedges, texts, autotexts = ax.pie(
+        category_spending,
+        autopct="%1.1f%%",
+        startangle=90,
+        pctdistance=1.15,
     )
 
     ax.set_title("Spending by Category")
-    ax.set_xlabel("Amount (€)")
-    ax.set_ylabel("")
 
-    ax.set_xlim(0, 2500)
-    ax.set_xticks(range(0, 2501, 250))
-    ax.grid(axis="x", linestyle="--", alpha=0.5)
+    ax.legend(
+        wedges,
+        category_spending.index,
+        title="Category",
+        loc="center left",
+        bbox_to_anchor=(1, 0.5),
+    )
 
     plt.tight_layout()
 
@@ -107,4 +111,37 @@ def plot_income_expenses_savings(monthly):
     plt.tight_layout()
 
     plt.savefig("output/income_expenses_savings.png")
+    plt.close()
+
+def plot_spending_evolution(monthly_category):
+    ax = monthly_category.plot(
+        kind="area",
+        stacked=True,
+        figsize=(10, 6),
+        alpha=0.8,
+    )
+
+    ax.set_title("Spending Evolution by Category")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Spending (€)")
+
+    ax.set_yticks(range(0, 2501, 250))
+    ax.grid(
+        axis="y",
+        linestyle="--",
+        linewidth=0.8,
+        alpha=0.6,
+    )
+
+    plt.xticks(rotation=45)
+
+    plt.legend(
+        title="Category",
+        bbox_to_anchor=(1.02, 1),
+        loc="upper left",
+    )
+
+    plt.tight_layout()
+
+    plt.savefig("output/spending_evolution.png")
     plt.close()
