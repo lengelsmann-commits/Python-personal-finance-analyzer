@@ -88,3 +88,23 @@ def plot_monthly_savings_rate(monthly):
 
     plt.savefig("output/monthly_savings_rate.png")
     plt.close()
+
+def plot_income_expenses_savings(monthly):
+    ax = monthly.plot(
+        y=["income", "expenses", "savings"],
+        kind="bar",
+        figsize=(10, 6),
+        width=0.75,
+    )
+
+    ax.set_title("Monthly Income, Expenses and Savings")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Amount (€)")
+
+    ax.grid(axis="y", linestyle="--", alpha=0.4)
+
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+
+    plt.savefig("output/income_expenses_savings.png")
+    plt.close()
