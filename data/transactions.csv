@@ -24,13 +24,13 @@ date,description,amount,type,category
 2026-02-08,Restaurant,-38.90,expense,Food
 2026-02-10,Electricity,-58.40,expense,Bills
 2026-02-12,Amazon,-64.99,expense,Shopping
-2026-02-14,Pharmacy,-27.30,expense,Healthcare
+2026-02-14,Dentist,-185.00,expense,Healthcare
 2026-02-15,Metro Card,-32.00,expense,Transport
 2026-02-17,Carrefour,-73.80,expense,Food
 2026-02-19,Concert,-55.00,expense,Entertainment
 2026-02-21,Internet,-29.99,expense,Bills
 2026-02-22,Restaurant,-46.50,expense,Food
-2026-02-24,Clothing Store,-52.00,expense,Shopping
+2026-02-24,Clothing Store,-145.00,expense,Shopping
 2026-02-26,Carrefour,-61.25,expense,Food
 2026-02-27,Train Ticket,-42.00,expense,Travel
 2026-02-28,Netflix,-13.99,expense,Subscriptions
@@ -47,9 +47,9 @@ date,description,amount,type,category
 2026-03-18,Football Match,-35.00,expense,Entertainment
 2026-03-20,Internet,-29.99,expense,Bills
 2026-03-22,Restaurant,-52.70,expense,Food
-2026-03-24,Shoes,-89.90,expense,Shopping
+2026-03-24,Laptop,-899.00,expense,Shopping
 2026-03-26,Carrefour,-63.10,expense,Food
-2026-03-28,Freelance Payment,500,income,Other Income
+2026-03-28,Freelance Payment,700,income,Other Income
 2026-03-30,Spotify,-11.99,expense,Subscriptions
 2026-04-02,Salary,2500,income,Salary
 2026-04-03,Carrefour,-94.70,expense,Food
@@ -81,9 +81,9 @@ date,description,amount,type,category
 2026-05-19,Cinema,-27.00,expense,Entertainment
 2026-05-21,Internet,-29.99,expense,Bills
 2026-05-22,Restaurant,-39.80,expense,Food
-2026-05-24,Electronics Store,-119.00,expense,Shopping
+2026-05-24,New Phone,-649.00,expense,Shopping
 2026-05-26,Carrefour,-77.40,expense,Food
-2026-05-28,Freelance Payment,450,income,Other Income
+2026-05-28,Freelance Payment,1100,income,Other Income
 2026-05-30,Spotify,-11.99,expense,Subscriptions
 2026-06-02,Salary,2500,income,Salary
 2026-06-03,Carrefour,-98.20,expense,Food
@@ -95,7 +95,7 @@ date,description,amount,type,category
 2026-06-13,Pharmacy,-24.80,expense,Healthcare
 2026-06-15,Metro Card,-32.00,expense,Transport
 2026-06-17,Carrefour,-72.60,expense,Food
-2026-06-19,Music Festival,-75.00,expense,Entertainment
+2026-06-19,Music Festival,-275.00,expense,Entertainment
 2026-06-21,Internet,-29.99,expense,Bills
 2026-06-23,Restaurant,-43.90,expense,Food
 2026-06-25,Clothing Store,-94.00,expense,Shopping
