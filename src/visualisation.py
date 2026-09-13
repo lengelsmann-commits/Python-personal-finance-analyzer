@@ -20,3 +20,24 @@ def plot_monthly_income_expenses(monthly):
 
     plt.savefig("output/monthly_income_expenses.png")
     plt.close()
+
+def plot_spending_by_category(category_spending):
+    category_spending = category_spending.sort_values()
+
+    ax = category_spending.plot(
+        kind="barh",
+        figsize=(8, 5),
+    )
+
+    ax.set_title("Spending by Category")
+    ax.set_xlabel("Amount (€)")
+    ax.set_ylabel("")
+
+    ax.set_xlim(0, 2500)
+    ax.set_xticks(range(0, 2501, 250))
+    ax.grid(axis="x", linestyle="--", alpha=0.5)
+
+    plt.tight_layout()
+
+    plt.savefig("output/spending_by_category.png")
+    plt.close()
