@@ -145,3 +145,36 @@ def plot_spending_evolution(monthly_category):
 
     plt.savefig("output/spending_evolution.png")
     plt.close()
+
+def plot_fixed_vs_variable_spending(monthly):
+    ax = monthly.plot(
+        kind="bar",
+        stacked=False,
+        figsize=(10, 6),
+        width=0.75,
+    )
+
+    ax.set_title("Fixed vs Variable Spending")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Spending (€)")
+
+    ax.set_yticks(range(0, 2501, 250))
+    ax.grid(
+        axis="y",
+        linestyle="--",
+        linewidth=0.8,
+        alpha=0.6,
+    )
+
+    plt.xticks(rotation=45)
+
+    plt.legend(
+        title="Spending Type",
+        bbox_to_anchor=(1.02, 1),
+        loc="upper left",
+    )
+
+    plt.tight_layout()
+
+    plt.savefig("output/fixed_vs_variable_spending.png")
+    plt.close()

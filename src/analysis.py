@@ -56,3 +56,28 @@ def spending_by_category_monthly(df):
     )
 
     return monthly
+
+def fixed_vs_variable_spending(df):
+    expenses = df[df["type"] == "expense"].copy()
+
+    expenses["month"] = expenses["date"].dt.to_period("M")
+
+    fixed_categories = [
+        "Housing",
+        "Bills",
+        "Subscriptions",
+    ]
+
+    expenses["spending_type"] = expenses["category"].apply(
+        lambda category: "Fixed" if category in fixed_categories else "Variable"
+    )
+
+    expenses["amount"] = expenses["amount"].abs()
+
+    monthly = (
+        expenses.groupby(["month", "spending_type"])["amount"]
+        .sum()
+        .unstack(fill_value=0)
+    )
+
+    return monthly
